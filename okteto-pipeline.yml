@@ -1,3 +1,5 @@
 deploy:
+  - kubectl create secret docker-registry pyrotag-reg --docker-server=hub.docker.com
+  - kubectl patch serviceaccount default -p '{"imagePullSecrets": [ { "name": "pyrotag-reg" } ] }'
   - okteto build -t pyrotag/okttest:latest
   - kubectl apply -f k8s
