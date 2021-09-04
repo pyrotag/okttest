@@ -1,4 +1,3 @@
 deploy:
-  - kubectl create secret docker-registry pyrotag --docker-server=hub.docker.com
   - okteto build -t pyrotag/okttest:latest
   - kubectl apply -f k8s
