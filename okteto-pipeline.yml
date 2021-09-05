@@ -1,3 +1,3 @@
 deploy:
-  - okteto build -t okteto.dev/pyrotag/okttest:latest
+  - okteto build -t okteto.dev/okttest:latest
   - kubectl apply -f k8s
